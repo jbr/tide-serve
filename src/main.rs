@@ -1,3 +1,12 @@
+#![forbid(unsafe_code, future_incompatible)]
+#![deny(
+    missing_debug_implementations,
+    nonstandard_style,
+    unreachable_pub,
+    missing_copy_implementations,
+    unused_qualifications
+)]
+
 use std::path::PathBuf;
 use tide::{Body, Request, Result, Status};
 
