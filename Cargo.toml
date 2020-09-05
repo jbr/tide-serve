@@ -1,0 +1,15 @@
+[package]
+name = "tide-serve"
+version = "0.0.1"
+authors = ["Jacob Rothstein <hi@jbr.me>"]
+edition = "2018"
+description = "a simple http file server binary based on tide"
+keywords = ["tide", "http", "file", "server"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/jbr/tide-serve"
+
+
+[dependencies]
+async-std = { version = "1.6.3", features = ["attributes"]}
+tide = "0.13.0"
