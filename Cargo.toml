@@ -1,6 +1,6 @@
 [package]
 name = "tide-serve"
-version = "0.0.2"
+version = "0.0.3-alpha.0"
 authors = ["Jacob Rothstein <hi@jbr.me>"]
 edition = "2018"
 description = "a simple http file server binary based on tide"
