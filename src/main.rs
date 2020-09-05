@@ -1,14 +1,15 @@
-use std::{env, path::PathBuf};
+use std::path::PathBuf;
 use tide::{Body, Request, Result, Status};
 
 #[async_std::main]
 async fn main() -> Result<()> {
-    let path = env::args().nth(1).unwrap_or(String::from("."));
+    let path = std::env::args().nth(1).unwrap_or_else(|| String::from("."));
     let path = PathBuf::from(path).canonicalize().unwrap();
     let mut app = tide::with_state(path.clone());
 
-    tide::log::start();
-    tide::log::info!("serving {:?}", path);
+    println!("serving {:?} at http://localhost:8000/", path);
+
+    app.with(driftwood::DevLogger);
 
     app.at("/")
         .get(|req: Request<PathBuf>| async move {
