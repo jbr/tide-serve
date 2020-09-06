@@ -71,8 +71,8 @@ struct Options {
     #[structopt(short = "o", long, env)]
     host: Option<String>,
 
-    #[structopt(short, long, env)]
-    port: Option<u16>,
+    #[structopt(short, long, env, default_value = "8080")]
+    port: u16,
 
     #[structopt(parse(from_os_str), default_value)]
     root: RootPath,
@@ -141,10 +141,7 @@ impl Options {
                 ..
             } => DynListener::new(
                 TlsListener::build()
-                    .addrs((
-                        host.as_deref().unwrap_or(LOCALHOST),
-                        port.or_else(portpicker::pick_unused_port).unwrap(),
-                    ))
+                    .addrs((host.as_deref().unwrap_or(LOCALHOST), *port))
                     .key(key)
                     .cert(cert),
             ),
@@ -153,13 +150,9 @@ impl Options {
                 bind: Some(bind), ..
             } => DynListener::new(bind.clone()),
 
-            Options {
-                host,
-                port: Some(port),
-                ..
-            } => DynListener::new((host.as_deref().unwrap_or(LOCALHOST), *port)),
-
-            _ => DynListener::new((LOCALHOST, portpicker::pick_unused_port().unwrap())),
+            Options { host, port, .. } => {
+                DynListener::new((host.as_deref().unwrap_or(LOCALHOST), *port))
+            }
         }
     }
 }
