@@ -26,12 +26,19 @@ pub struct CliOptions {
 
     #[structopt(short, long, env, parse(from_os_str))]
     key_path: Option<PathBuf>,
+
+    #[structopt(short, long, env = "FORWARD")]
+    forward: Option<String>,
 }
 
 const LOCALHOST: &str = "127.0.0.1";
 impl CliOptions {
     pub fn root(&self) -> &RootPath {
         &self.root
+    }
+
+    pub fn forward(&self) -> Option<&str> {
+        self.forward.as_deref()
     }
 
     pub fn listener<T: Clone + Send + Sync + 'static>(&self) -> DynListener<T> {

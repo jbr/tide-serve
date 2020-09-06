@@ -17,3 +17,4 @@ driftwood = "0.0.1"
 tide-rustls = "0.1.2"
 structopt = "0.3.17"
 portpicker = "0.1.0"
+surf = { git = "https://github.com/http-rs/surf", branch = "main" }

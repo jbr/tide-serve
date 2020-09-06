@@ -8,10 +8,12 @@
 
 mod cli_options;
 mod dyn_listener;
+mod forward_middleware;
 mod root_path;
 
 use cli_options::CliOptions;
 use dyn_listener::DynListener;
+use forward_middleware::ForwardMiddleware;
 use root_path::RootPath;
 
 use structopt::StructOpt;
@@ -24,6 +26,10 @@ async fn main() -> Result<()> {
     let mut app = tide::with_state(path.clone());
 
     app.with(driftwood::DevLogger);
+
+    if let Some(forward) = options.forward() {
+        app.with(ForwardMiddleware::new(forward));
+    }
 
     app.at("/")
         .get(|req: Request<RootPath>| async move {
