@@ -13,15 +13,13 @@
 [version-badge]: https://img.shields.io/crates/v/tide-serve.svg?style=flat-square
 
 ## Installation
+
 ```sh
-$ cargo install tide-serve
+$ cargo install --git https://github.com/jbr/tide-serve --branch main
 ```
+Soon this will just be `cargo install tide-serve`, but we are currently waiting on a `surf` release
 
 ## Usage
-```sh
-$ tide-serve ./static # defaults to . if omitted
-```
-
 
 ```sh
 $ tide-serve --help
