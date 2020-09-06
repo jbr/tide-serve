@@ -80,9 +80,6 @@ ARGS:
             Defaults to the current working directory
 ```
 
-For now is no way to specify a different listener than
-http://localhost:8000, but that's coming soon
-
 ## Safety
 This crate uses ``#![deny(unsafe_code)]`` to ensure everything is implemented in
 100% Safe Rust.
