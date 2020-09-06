@@ -11,6 +11,9 @@ repository = "https://github.com/jbr/tide-serve"
 
 
 [dependencies]
-async-std = { version = "1.6.3", features = ["attributes"]}
+async-std = { version = "1.6.3", features = ["attributes"] }
 tide = "0.13.0"
 driftwood = "0.0.1"
+tide-rustls = "0.1.2"
+structopt = "0.3.17"
+portpicker = "0.1.0"
