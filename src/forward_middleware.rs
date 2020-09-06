@@ -17,7 +17,7 @@ impl ForwardMiddleware {
                 }
                 .as_ref(),
             )
-            .expect(&format!("could not parse {} as forwarding url", s)),
+            .unwrap_or_else(|_| panic!("could not parse {} as forwarding url", s)),
         )
     }
 }
