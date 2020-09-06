@@ -22,6 +22,66 @@ $ cargo install tide-serve
 $ tide-serve ./static # defaults to . if omitted
 ```
 
+
+```sh
+$ tide-serve --help
+tide-serve 0.0.3-alpha.0
+a simple static http server built with tide
+
+USAGE:
+    tide-serve [OPTIONS] [root]
+
+FLAGS:
+    -h, --help
+            Prints help information
+
+    -V, --version
+            Prints version information
+
+
+OPTIONS:
+    -o, --host <host>
+            Local host or ip to listen on [env: HOST=]  [default: localhost]
+
+    -p, --port <port>
+            Local port to listen on [env: PORT=]  [default: 8080]
+
+    -b, --bind <bind>
+            Local listener spec to bind
+
+            Examples: `--bind localhost:8080` `--bind http://localhost:8080` `--bind [::1]:1213`
+
+            On unix-like systems only: `--bind http+unix:///var/run/some.socket` `--bind http+unix://./tmp/socket`
+
+            --bind will override --host and --port. [env: TIDE_BIND=]
+    -c, --cert-path <cert-path>
+            Path to a tls certificate for tide_rustls
+
+            This will be ignored unless key_path is also provided. providing both key_path and cert_path enables tls.
+
+            Example: `--cert ./cert.pem --key ./key.pem` For development, try using mkcert [env: CERT_PATH=]
+    -k, --key-path <key-path>
+            The path to a tls key file for tide_rustls
+
+            This will be ignored unless cert_path is also provided. providing both key_path and cert_path enables tls.
+
+            Example: `--cert ./cert.pem --key ./key.pem` For development, try using mkcert [env: KEY_PATH=]
+    -f, --forward <forward>
+            Host to forward (reverse proxy) not-found requests to
+
+            This forwards any request that would otherwise be a 404 Not Found to the specified listener spec.
+
+            Examples: `--forward localhost:8081` `--forward http://localhost:8081` `--forward https://localhost:8081`
+
+            Note: http+unix:// schemes are not yet supported [env: FORWARD=]
+
+ARGS:
+    <root>
+            Filesystem path to serve
+
+            Defaults to the current working directory
+```
+
 For now is no way to specify a different listener than
 http://localhost:8000, but that's coming soon
 
