@@ -24,9 +24,11 @@ impl ForwardMiddleware {
 
 #[tide::utils::async_trait]
 impl<T: Clone + Send + Sync + 'static> Middleware<T> for ForwardMiddleware {
-    async fn handle(&self, request: Request<T>, next: Next<'_, T>) -> Result {
+    async fn handle(&self, mut request: Request<T>, next: Next<'_, T>) -> Result {
+        let body = request.take_body();
         let http_request: &http::Request = request.as_ref();
         let mut http_request = http_request.clone();
+        http_request.set_body(body);
         let response = next.run(request).await;
         if response.status().is_client_error() {
             let url = http_request.url_mut();
