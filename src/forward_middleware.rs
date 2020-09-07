@@ -28,7 +28,7 @@ fn forwarded(http_request: &http::Request) -> Forwarded<'static> {
         .ok()
         .flatten()
         .map(|f| f.into_owned())
-        .unwrap_or_else(|| Forwarded::new());
+        .unwrap_or_else(Forwarded::new);
     forwarded.add_for(http_request.peer_addr().unwrap_or("unknown"));
     forwarded.set_by("_tide_serve");
     forwarded.set_proto(http_request.url().scheme());
