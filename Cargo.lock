@@ -609,9 +609,9 @@ checksum = "212d0f5754cb6769937f4501cc0e67f4f4483c8d2c3e1e922ee9edbe4ab4c7c0"
 
 [[package]]
 name = "driftwood"
-version = "0.0.1"
+version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4d19fab811d252de795ad6ae58c49fe8b1870e3ab6c3d6b78655ed50cfe515cf"
+checksum = "d8350e63de72e060a276aa90e5cc79c6164ac092d37bd696783d22ccee8541eb"
 dependencies = [
  "chrono",
  "colored",
