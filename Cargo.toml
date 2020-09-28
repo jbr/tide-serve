@@ -17,7 +17,7 @@ driftwood = "0.0.3"
 tide-rustls = "0.1.2"
 structopt = "0.3.18"
 portpicker = "0.1.0"
-http-client = "5.0.1"
+http-client = "6.0.0"
 
 [patch.crates-io]
 http-types = { git = "https://github.com/http-rs/http-types", branch = "main" }
