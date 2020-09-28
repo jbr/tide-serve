@@ -896,9 +896,9 @@ dependencies = [
 
 [[package]]
 name = "http-client"
-version = "5.0.1"
+version = "6.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "565efc6d9e590b9be809ce8406d4ed7bc685cb00fcc9ddd69cbca896b1883ff2"
+checksum = "9a519fb1e28c8aa09b1291c17f814cd0efb239c509f76d5acf75089e606b93e8"
 dependencies = [
  "async-h1",
  "async-native-tls",
