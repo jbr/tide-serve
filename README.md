@@ -15,7 +15,7 @@
 ## Installation
 
 ```sh
-$ cargo install https://github.com/jbr/tide-serve
+$ cargo install tide-serve
 ```
 
 ## Usage
