@@ -15,15 +15,14 @@
 ## Installation
 
 ```sh
-$ cargo install --git https://github.com/jbr/tide-serve --branch main
+$ cargo install https://github.com/jbr/tide-serve
 ```
-Soon this will just be `cargo install tide-serve`, but we are currently waiting on a `surf` release
 
 ## Usage
 
 ```sh
 $ tide-serve --help
-tide-serve 0.0.3-alpha.0
+tide-serve 0.0.4
 a simple static http server built with tide
 
 USAGE:
@@ -81,7 +80,7 @@ ARGS:
 ```
 
 ## Safety
-This crate uses ``#![deny(unsafe_code)]`` to ensure everything is implemented in
+This crate uses ``#![forbid(unsafe_code)]`` to ensure everything is implemented in
 100% Safe Rust.
 
 ## License
