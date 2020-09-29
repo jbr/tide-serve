@@ -1795,7 +1795,7 @@ dependencies = [
 
 [[package]]
 name = "tide-serve"
-version = "0.0.3-alpha.0"
+version = "0.0.3"
 dependencies = [
  "async-std",
  "driftwood",
