@@ -15,5 +15,5 @@ async-std = { version = "1.6.5", features = ["attributes"] }
 tide = "0.13.0"
 driftwood = "0.0.3"
 tide-rustls = "0.1.2"
-structopt = "0.3.18"
+structopt = "0.3.19"
 http-client = "6.1.0"
