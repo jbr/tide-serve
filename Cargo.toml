@@ -16,6 +16,3 @@ driftwood = "0.0.5"
 tide-rustls = "0.1.4"
 structopt = "0.3.21"
 http-client = "6.2.0"
-
-[patch.crates-io]
-async-h1 = { path = "../async-h1" }

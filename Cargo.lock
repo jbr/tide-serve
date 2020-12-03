@@ -142,6 +142,8 @@ dependencies = [
 [[package]]
 name = "async-h1"
 version = "2.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3fd9a5f3dbb5065856974e08c2ac24e6f81da6e39d2328de1c03a9a2b34ffb01"
 dependencies = [
  "async-std",
  "byte-pool",
@@ -150,7 +152,7 @@ dependencies = [
  "httparse",
  "lazy_static",
  "log",
- "pin-project",
+ "pin-project-lite",
 ]
 
 [[package]]
