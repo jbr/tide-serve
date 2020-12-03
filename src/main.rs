@@ -17,7 +17,7 @@ use forward_middleware::ForwardMiddleware;
 use root_path::RootPath;
 
 use structopt::StructOpt;
-use tide::{Body, Request, Result, Status};
+use tide::{listener::Listener, Body, Request, Result, Status};
 
 #[async_std::main]
 async fn main() -> Result<()> {
@@ -39,8 +39,9 @@ async fn main() -> Result<()> {
         })
         .serve_dir(&*path)?;
 
-    let listener = options.listener();
+    let mut listener = options.listener();
+    listener.bind(app).await?;
     println!("serving {} on {}", options.root(), listener);
-    app.listen(listener).await?;
+    listener.accept().await?;
     Ok(())
 }

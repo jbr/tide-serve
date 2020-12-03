@@ -31,8 +31,16 @@ impl<T: Clone + Send + Sync + 'static> DynListener<T> {
 
 #[tide::utils::async_trait]
 impl<T: Clone + Send + Sync + 'static> Listener<T> for DynListener<T> {
-    async fn listen(&mut self, app: tide::Server<T>) -> std::io::Result<()> {
-        self.l.listen(app).await
+    async fn bind(&mut self, app: tide::Server<T>) -> std::io::Result<()> {
+        self.l.bind(app).await
+    }
+
+    async fn accept(&mut self) -> std::io::Result<()> {
+        self.l.accept().await
+    }
+
+    fn info(&self) -> Vec<tide::listener::ListenInfo> {
+        self.l.info()
     }
 }
 
