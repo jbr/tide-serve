@@ -661,7 +661,7 @@ dependencies = [
  "chrono",
  "colored",
  "size",
- "tide",
+ "tide 0.15.1",
 ]
 
 [[package]]
@@ -900,9 +900,9 @@ dependencies = [
 
 [[package]]
 name = "http-types"
-version = "2.9.0"
+version = "2.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f2ab8d0085fb82859c9adf050bd53992297ecdd03a665a230dfa50c8c964bf3d"
+checksum = "32613ebb139d1d430ef5783676f84abfa06fc5f2b4b5a25220cdeeff7e16ef5c"
 dependencies = [
  "anyhow",
  "async-channel",
@@ -911,7 +911,7 @@ dependencies = [
  "cookie",
  "futures-lite",
  "infer",
- "pin-project-lite 0.1.11",
+ "pin-project-lite 0.2.0",
  "rand",
  "serde",
  "serde_json",
@@ -1727,6 +1727,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "tide"
+version = "0.16.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c459573f0dd2cc734b539047f57489ea875af8ee950860ded20cf93a79a1dee0"
+dependencies = [
+ "async-h1",
+ "async-session",
+ "async-sse",
+ "async-std",
+ "async-trait",
+ "femme",
+ "futures-util",
+ "http-client",
+ "http-types",
+ "kv-log-macro",
+ "log",
+ "pin-project-lite 0.2.0",
+ "route-recognizer",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "tide-rustls"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1737,7 +1760,7 @@ dependencies = [
  "async-std",
  "async-tls",
  "rustls",
- "tide",
+ "tide 0.15.1",
 ]
 
 [[package]]
@@ -1748,7 +1771,7 @@ dependencies = [
  "driftwood",
  "http-client",
  "structopt",
- "tide",
+ "tide 0.16.0",
  "tide-rustls",
 ]
 
