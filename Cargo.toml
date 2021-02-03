@@ -10,9 +10,9 @@ readme = "README.md"
 repository = "https://github.com/jbr/tide-serve"
 
 [dependencies]
-async-std = { version = "1.8.0", features = ["attributes"] }
-tide = "0.15.1"
-driftwood = "0.0.5"
-tide-rustls = "0.1.6"
+async-std = { version = "1.9.0", features = ["attributes"] }
+tide = "0.16.0"
+driftwood = "0.0.6"
+tide-rustls = "0.2.0"
 structopt = "0.3.21"
 http-client = "6.2.0"
