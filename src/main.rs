@@ -33,9 +33,9 @@ async fn main() -> Result<()> {
 
     app.at("/")
         .get(|req: Request<RootPath>| async move {
-            Ok(Body::from_file(req.state().join("index.html"))
+            Body::from_file(req.state().join("index.html"))
                 .await
-                .status(404)?)
+                .status(404)
         })
         .serve_dir(&*path)?;
 

@@ -46,6 +46,7 @@ impl<T: Clone + Send + Sync + 'static> Listener<T> for DynListener<T> {
 
 impl<T: Clone + Send + Sync + 'static> ToListener<T> for DynListener<T> {
     type Listener = DynListener<T>;
+    #[allow(clippy::wrong_self_convention)]
     fn to_listener(self) -> std::io::Result<Self::Listener> {
         Ok(self)
     }
