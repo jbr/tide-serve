@@ -22,7 +22,7 @@ $ cargo install tide-serve
 
 ```sh
 $ tide-serve --help
-tide-serve 0.0.4
+tide-serve 0.0.x
 a simple static http server built with tide
 
 USAGE:
