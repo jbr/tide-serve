@@ -692,9 +692,9 @@ checksum = "212d0f5754cb6769937f4501cc0e67f4f4483c8d2c3e1e922ee9edbe4ab4c7c0"
 
 [[package]]
 name = "driftwood"
-version = "0.0.6"
+version = "0.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "13b3023a4726001fac50751213c596901a1f3b2edd9d071012f01b92eba0c995"
+checksum = "4084f98ff8856ca3aa3777f2b30b4f30aebf45185fe4685fb2253a4744e324a1"
 dependencies = [
  "chrono",
  "colored",
@@ -1701,12 +1701,9 @@ dependencies = [
 
 [[package]]
 name = "size"
-version = "0.1.2"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e5021178e8e70579d009fb545932e274ec2dde4c917791c6063d1002bee2a56"
-dependencies = [
- "num-traits",
-]
+checksum = "9fed904c7fb2856d868b92464fc8fa597fce366edea1a9cbfaa8cb5fe080bd6d"
 
 [[package]]
 name = "slab"
